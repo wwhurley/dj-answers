@@ -1,12 +1,13 @@
 angular.module('djAnswers').controller('BluebellsController', ['$scope', 'answers', '$state', function($scope, answers, $state) {
-  $scope.answer = '';
-  $scope.alerts = [];
-  $scope.correctAnswer = false;
-  $scope.showHint = false;
   $scope.enabled = answers.getEnabled();
   answers.setEnabled('bluebells.questionOne');
   
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+    $scope.answer = '';
+    $scope.alerts = [];
+    $scope.correctAnswer = false;
+    $scope.showHint = false;
+    
     if (!answers.isEnabled(toState.name)) {
       $state.go('bluebells.questionOne');
     }
