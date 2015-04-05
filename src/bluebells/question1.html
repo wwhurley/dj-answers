@@ -1,0 +1,34 @@
+<div class="jumbotron">
+	<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
+		<span ng-bind-html="alert.msg"></span>
+	</alert>
+	<div class="row">
+		<div class="col-md-6">
+			<p>
+				Deep in the forest the fairies do dwell<br/>
+				These flowers bring magic and ring like a bell<br/>
+			</p>
+			<p>
+				They grow near water and their petals are blue<br/>
+				The fairies wear boots and so should you.
+			</p>
+			<p>
+				An enchanted forest is not far away<br/>
+				Name this spring flower to brighten your day
+			</p>
+			<p>
+				<input type="text" class="form-control" rows="5" ng-model="$parent.answer"></textarea>
+			</p>
+			<p><a class="btn btn-primary btn-lg" ng-click="checkAnswer(['bluebell', 'bluebells'], 'bluebells.questionTwo')" role="button">Answer</a></p>
+		</div>
+		<div class="col-md-6">
+			<div collapse="!correctAnswer">
+				<h3>Yay</h3>
+			</div>
+		</div>
+	</div>
+	
+	<div collapse="!showHint">
+		<h2>Hint</h2>
+	</div>
+</div>

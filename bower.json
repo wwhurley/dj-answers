@@ -1,0 +1,19 @@
+{
+  "name": "dj-answers",
+  "version": "0.0.0",
+  "homepage": "https://github.com/wwhurley/dj-answers",
+  "authors": [
+    "William Hurley <whurley@forumone.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

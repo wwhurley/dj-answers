@@ -1,0 +1,12 @@
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li ui-sref-active="active"><a ui-sref="bluebells.questionOne">Question 1</a></li>
+				<li ui-sref-active="active" ng-class="{disabled : enabled.indexOf('bluebells.questionTwo') == -1}"><a ui-sref="bluebells.questionTwo">Question 2</a></li>
+				<li ui-sref-active="active" ng-class="{disabled : enabled.indexOf('bluebells.questionThree') == -1}"><a ui-sref="bluebells.questionThree">Question 3</a></li>
+			</ul>		
+		</div>
+	</div>
+</nav>
+<ui-view></ui-view>

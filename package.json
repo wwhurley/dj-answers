@@ -1,0 +1,28 @@
+{
+  "name": "dj-answers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wwhurley/dj-answers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wwhurley/dj-answers/issues"
+  },
+  "homepage": "https://github.com/wwhurley/dj-answers",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-angular-templates": "^0.5.7",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-connect": "^0.10.1",
+    "grunt-contrib-htmlmin": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "include-all": "^0.1.6"
+  }
+}
