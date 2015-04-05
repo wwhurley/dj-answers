@@ -2,7 +2,7 @@ var djAnswers = angular.module('djAnswers', ['ngRoute', 'ui.router', 'ngSanitize
 djAnswers.config(['$urlRouterProvider', '$locationProvider', '$stateProvider', function($urlRouterProvider, $locationProvider, $stateProvider) {
 //  $locationProvider.html5Mode(true);
   
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/bluebells/1');
   
   $stateProvider
   //Home page
