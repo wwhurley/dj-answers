@@ -1,8 +1,26 @@
 <div class="jumbotron">
-	<h1>Question 2</h1>
-	<p>Lorem ipsum</p>
-	<p>
-		<textarea class="form-control" rows="5"></textarea>
-	</p>
-	<p><a class="btn btn-primary btn-lg" href="#" role="button">Answer</a></p>
+	<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
+		<span ng-bind-html="alert.msg"></span>
+	</alert>
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<form class="form-inline">
+			<p>
+				Miss Mary Mack<br/>
+				All dressed in black<br/>
+				with silver <input type="text" class="form-control" ng-model="$parent.answer" placeholder="Enter answer here" /><br/>
+				all down her back.</br>
+			</p>
+			<p><a class="btn btn-primary btn-lg" ng-click="checkAnswer(['buttons'], 'Oops, that\'s not quite right. Here\'s a <a href=\'https://www.youtube.com/watch?v=Rz6gUgRK5So\' target=\'_blank\'>hint</a>', 'bluebells.questionThree')" role="button">Answer</a></p>
+			</form>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<div collapse="!correctAnswer">
+				<p>Learn to play Miss Mary Mack with this tutorial:</p>
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe src="https://www.youtube.com/embed/q-Xcw3T-vQs" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

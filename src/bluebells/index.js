@@ -12,16 +12,21 @@ angular.module('djAnswers').controller('BluebellsController', ['$scope', 'answer
     }
   });
   
-  $scope.checkAnswer = function(test, next) {
+  $scope.checkAnswer = function(test, errorMsg, next) {
     answers.compare($scope.answer, test)
     .then(function() {
       var ref = $state.href(next);
       $scope.correctAnswer = true;
       $scope.showHint = false;
       
+      var msg = "That's the right answer!";
+      
+      if (next) {
+        msg += ' Try the <a href="' + ref + '">next question</a>';
+      }
       $scope.alerts = [{
         type : 'success',
-        msg : 'That\'s the right answer! Try the <a href="' + ref + '">next question</a>'
+        msg : msg
       }];
 
       answers.setEnabled(next);
@@ -32,12 +37,11 @@ angular.module('djAnswers').controller('BluebellsController', ['$scope', 'answer
       
       $scope.alerts = [{
         type : 'danger',
-        msg : 'Oops, here\'s a <a href="http://www.google.com" target="_blank">hint</a>'
+        msg : errorMsg
       }];
     });
     
     $scope.enabled = answers.getEnabled();
-    console.log($scope.enabled);
   }
   
   $scope.closeAlert = function(index) {

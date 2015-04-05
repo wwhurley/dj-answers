@@ -4,6 +4,7 @@
 	</alert>
 	<div class="row">
 		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<form>
 			<p>
 				Deep in the forest the fairies do dwell<br/>
 				These flowers bring magic and ring like a bell<br/>
@@ -19,16 +20,14 @@
 			<p>
 				<input type="text" class="form-control" rows="5" ng-model="$parent.answer"></textarea>
 			</p>
-			<p><a class="btn btn-primary btn-lg" ng-click="checkAnswer(['bluebell', 'bluebells'], 'bluebells.questionTwo')" role="button">Answer</a></p>
+			<p><a class="btn btn-primary btn-lg" ng-click="checkAnswer(['bluebell', 'bluebells'], 'Oops, that\'s not quite right. Here\'s a <a href=\'http://www.lair2000.net/fairy_spring_poems/spring_poems/bluebell.html\' target=\'_blank\'>hint</a>', 'bluebells.questionTwo')" role="button">Answer</a></p>
+			</form>
 		</div>
 		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 			<div collapse="!correctAnswer">
-				<h3>Yay</h3>
+				<p>Become the Bluebell Fairy King with <a href="http://www.hellobee.com/2012/05/30/diy-felt-crown/" target="_blank">this felt crown</a>.</p>
+				<a href="http://www.hellobee.com/2012/05/30/diy-felt-crown/" target="_blank"><img src="http://www.hellobee.com/wp-content/uploads/2012/05/diy-felt-crown-c.jpg" class="img-responsive" /></a>
 			</div>
 		</div>
-	</div>
-	
-	<div collapse="!showHint">
-		<h2>Hint</h2>
 	</div>
 </div>
