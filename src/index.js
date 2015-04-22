@@ -2,7 +2,7 @@ var djAnswers = angular.module('djAnswers', ['ngRoute', 'ui.router', 'ngSanitize
 djAnswers.config(['$urlRouterProvider', '$locationProvider', '$stateProvider', function($urlRouterProvider, $locationProvider, $stateProvider) {
 //  $locationProvider.html5Mode(true);
   
-  $urlRouterProvider.otherwise('/bluebells/1');
+  $urlRouterProvider.otherwise('/burnside/1');
   
   $stateProvider
   //Home page
@@ -27,5 +27,22 @@ djAnswers.config(['$urlRouterProvider', '$locationProvider', '$stateProvider', f
   .state('bluebells.questionThree', {
     url : '/3',
     templateUrl : 'bluebells/question3.html'
+  })
+  .state('burnside', {
+    url : '/burnside',
+    templateUrl : 'burnside/index.html',
+    controller : 'BurnsideController'
+  })
+  .state('burnside.questionOne', {
+    url : '/1',
+    templateUrl : 'burnside/question1.html'
+  })
+  .state('burnside.questionTwo', {
+    url : '/2',
+    templateUrl : 'burnside/question2.html'
+  })
+  .state('burnside.questionThree', {
+    url : '/3',
+    templateUrl : 'burnside/question3.html'
   })
 }]);

@@ -21,6 +21,26 @@ angular.module('djAnswers').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('burnside/index.html',
+    "<nav class=\"navbar navbar-default\"><div class=container-fluid><div class=\"collapse navbar-collapse\" id=bs-example-navbar-collapse-1><ul class=\"nav navbar-nav\"><li ui-sref-active=active><a ui-sref=burnside.questionOne>Question 1</a></li><li ui-sref-active=active ng-class=\"{disabled : enabled.indexOf('burnside.questionTwo') == -1}\"><a ui-sref=burnside.questionTwo>Question 2</a></li><li ui-sref-active=active ng-class=\"{disabled : enabled.indexOf('burnside.questionThree') == -1}\"><a ui-sref=burnside.questionThree>Question 3</a></li></ul></div></div></nav><ui-view></ui-view>"
+  );
+
+
+  $templateCache.put('burnside/question1.html',
+    "<div class=jumbotron><alert ng-repeat=\"alert in alerts\" type={{alert.type}} close=closeAlert($index)><span ng-bind-html=alert.msg></span></alert><div class=row><div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\"><form><p>Roses are red. Violets are blue.<br>In Holland, they wear this kind of shoe?</p><p><input class=form-control rows=5 ng-model=\"$parent.answer\"></p><p><a class=\"btn btn-primary btn-lg\" ng-click=\"checkAnswer(['wooden', 'wood', 'klomp', 'klompen'], 'Oops, that\\'s not quite right. Here\\'s a <a href=\\'http://superbeefy.com/why-do-the-dutch-wear-wooden-shoes/\\' target=\\'_blank\\'>hint</a>', 'burnside.questionTwo')\" role=button>Answer</a> <a class=hint href=\"http://superbeefy.com/why-do-the-dutch-wear-wooden-shoes/\" target=_blank>Need a hint?</a></p></form></div><div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\"><div collapse=!correctAnswer><p>Dress up in a <a href=http://www.hvanrossum.com/costume.html target=_blank>traditional costume!</a></p><a href=http://www.hvanrossum.com/costume.html target=_blank><img src=http://www.hvanrossum.com/costumekl.gif class=\"img-responsive\"></a></div></div></div></div>"
+  );
+
+
+  $templateCache.put('burnside/question2.html',
+    "<div class=jumbotron><alert ng-repeat=\"alert in alerts\" type={{alert.type}} close=closeAlert($index)><span ng-bind-html=alert.msg></span></alert><div class=row><div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\"><form class=form-inline><p>Flowers have families like you and like me.<br>Tulips are true bulbs which means they live in what family?</p><p><input class=form-control rows=5 ng-model=\"$parent.answer\"></p><p><a class=\"btn btn-primary btn-lg\" ng-click=\"checkAnswer(['lily'], 'Oops, that\\'s not quite right. Here\\'s a <a href=\\'http://www.botanical-online.com/familialiliaceasangles.htm\\' target=\\'_blank\\'>hint</a>', 'burnside.questionThree')\" role=button>Answer</a> <a class=hint href=http://www.botanical-online.com/familialiliaceasangles.htm target=_blank>Need a hint?</a></p></form></div><div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\"><div collapse=!correctAnswer><p><a href=http://www.kidsgardening.org/node/12167 target=_blank>Learn about bulbs</a>.</p><p><a href=http://candiceashmentart.blogspot.com/2012/05/field-of-tulips-hand-art-kindergarten.html target=_blank>Create a tulip field with your family!</a></p><a href=http://candiceashmentart.blogspot.com/2012/05/field-of-tulips-hand-art-kindergarten.html target=_blank><img src=http://2.bp.blogspot.com/-X_IF-SazeRA/T7vVLYZ-qKI/AAAAAAAABZM/rP9rFAPqr88/s640/100_8534.JPG class=\"img-responsive\"></a></div></div></div></div>"
+  );
+
+
+  $templateCache.put('burnside/question3.html',
+    "<div class=jumbotron><alert ng-repeat=\"alert in alerts\" type={{alert.type}} close=closeAlert($index)><span ng-bind-html=alert.msg></span></alert><div class=row><div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\"><form><p>This building is a machine that runs only on air.<br>With four large sails it travels nowhere.</p><p><input class=form-control rows=5 ng-model=\"$parent.answer\"></p><p><a class=\"btn btn-primary btn-lg\" ng-click=\"checkAnswer(['windmill', 'windmills'], 'Oops, that\\'s not quite right. Check out the hint below.')\" role=button>Answer</a> <a class=hint ng-click=\"showHint = true\">Need a hint?</a></p></form></div><div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\"><div collapse=!showHint><img src=https://postmediamontrealgazette2.files.wordpress.com/2013/03/1276051231_98879510_5-don-quijote-de-la-mancha-malaga-1276051231.jpg class=\"img-responsive\"></div><div collapse=!correctAnswer><p>Congratulations! You can be on your way.<br>Head over to <a href=\"http://www.burnsidefarms.com/\" target=_blank>Burnside</a> and discover a beautiful day</p><p><a href=http://30minutecrafts.com/2014/06/printable-windmill.html target=_blank>Make your own windmill!</a></p></div></div></div></div>"
+  );
+
+
   $templateCache.put('home/index.html',
     "<a ui-sref=bluebells.test>Test</a>"
   );

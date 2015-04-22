@@ -1,0 +1,28 @@
+<div class="jumbotron">
+	<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
+		<span ng-bind-html="alert.msg"></span>
+	</alert>
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<form>
+			<p>
+				Roses are red. Violets are blue.<br/>
+				In Holland, they wear this kind of shoe?
+			</p>
+			<p>
+				<input type="text" class="form-control" rows="5" ng-model="$parent.answer" />
+			</p>
+			<p>
+				<a class="btn btn-primary btn-lg" ng-click="checkAnswer(['wooden', 'wood', 'klomp', 'klompen'], 'Oops, that\'s not quite right. Here\'s a <a href=\'http://superbeefy.com/why-do-the-dutch-wear-wooden-shoes/\' target=\'_blank\'>hint</a>', 'burnside.questionTwo')" role="button">Answer</a>
+				<a class="hint" href="http://superbeefy.com/why-do-the-dutch-wear-wooden-shoes/" target="_blank">Need a hint?</a>
+			</p>
+			</form>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<div collapse="!correctAnswer">
+				<p>Dress up in a <a href="http://www.hvanrossum.com/costume.html" target="_blank">traditional costume!</a></p>
+				<a href="http://www.hvanrossum.com/costume.html" target="_blank"><img src="http://www.hvanrossum.com/costumekl.gif" class="img-responsive" /></a>
+			</div>
+		</div>
+	</div>
+</div>
